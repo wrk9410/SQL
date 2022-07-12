@@ -1,0 +1,22 @@
+MySQL 8.0.20
+
+1. mysql 홈페이지 > download > MySQL Community (GPL) Downloads > MySQL Installer for Windows
+2. Archives > 8.0.20 > 밑에 Download
+3. Developer Default > next > Execute > Install
+(MySQL for Visual Studio 1.2.9, Connector/Python 8.0.20 체크 안되어 있어도 됨)
+4. next > 아무것도 하지말고 yes > Execute > (계속)next
+5. Type and Networking
+ - Port : 서버에 들어올 수 있는 통로? (다른 Port들과 겹치면 안됨)
+6. Authentication Method > next
+7. Accounts and Roles
+ - Password : root
+8. Apply Configuration > Execute
+9. 이후 체크 없이 next, finish 진행
+
+==============================================================================
+
+- default-time-zone : +09:00 (시간 설정)
+
+==============================================================================
+colum : 열
+row : 행
