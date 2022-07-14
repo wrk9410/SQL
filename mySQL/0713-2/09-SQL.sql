@@ -1,3 +1,5 @@
+USE hr;
+
 -- 각 직원들의 이름과 연봉, 평균연봉과의 차(평균연봉 - 연봉)를 조회해보세요.
 select AVG(SALARY) from employees; -- 평균 연봉
 
@@ -19,10 +21,12 @@ select COUNT(*) from employees WHERE DEPARTMENT_ID IN (select DEPARTMENT_ID from
 
 -- Douglas Grant의 이메일을 'dog@naver.com'으로 변경해보세요.
 select * from employees WHERE FIRST_NAME = "Douglas" AND LAST_NAME = "Grant";
+
 UPDATE employees SET EMAIL = "dog@naver.com" WHERE FIRST_NAME = "Douglas" AND LAST_NAME = "Grant";
 
 -- Ellen Abel과 같은 부서에서 근무하는 직원을 연봉 내림차순으로 정렬해서 조회
 select * from employees WHERE FIRST_NAME = "Ellen" AND LAST_NAME = "Abel";
+
 select * from employees
 where DEPARTMENT_ID = (select DEPARTMENT_ID from employees WHERE FIRST_NAME = "Ellen" AND LAST_NAME = "Abel")
 order by SALARY desc;
@@ -31,11 +35,17 @@ order by SALARY desc;
 select * from employees where SALARY > (
 select SALARY from employees
 WHERE DEPARTMENT_ID
-IN (select DEPARTMENT_ID from departments WHERE DEPARTMENT_NAME LIKE ("IT%")) limit 1
-)
+IN (select DEPARTMENT_ID from departments WHERE DEPARTMENT_NAME LIKE ("IT%")) limit 1)
+order by SALARY ASC;
+
+select * from employees where SALARY > (
+select MAX(SALARY) from employees
+WHERE DEPARTMENT_ID
+IN (select DEPARTMENT_ID from departments WHERE DEPARTMENT_NAME LIKE ("IT%")))
 order by SALARY ASC;
 
 -- 각자 자기가 속한 부서의 평균보다 많이 받는 직원
 select * from departments;
+select COUNT(*) from employees WHERE DEPARTMENT_ID = 30;
+select * from employees WHERE DEPARTMENT_ID IN (select DEPARTMENT_ID from employees);
 
-select * from employees;
