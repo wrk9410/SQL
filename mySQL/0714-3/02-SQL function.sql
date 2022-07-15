@@ -1,8 +1,8 @@
 select * FROM employees;
 
-select RTRIM('a           ');
-select LTRIM('    a    ');
-select TRIM('    a    ');
+select RTRIM('a        '); -- 우측 공백 삭제
+select LTRIM('    a    '); -- 좌측 공백 삭제
+select  TRIM('    a    '); -- 모든 공백 삭제
 
 SELECT LOWER('ABCDE');
 SELECT UPPER('abcde');

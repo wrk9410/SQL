@@ -1,3 +1,5 @@
+use hr;
+
 -- 부서별(그룹) 직원들의 인원 수
 select DEPARTMENT_ID, COUNT(*) FROM employees
 	GROUP BY DEPARTMENT_ID; -- GROUP BY (기준컬럼): (기준컬럼)을 기준으로 새로운 그룹을 만들어서 출력
@@ -26,7 +28,7 @@ select LAST_NAME, COUNT(*) FROM employees group by LAST_NAME;
 -- 같은 LAST_NAME 그룹의 카운터가 2이상 그룹들만 조회
 select LAST_NAME, COUNT(*)
 FROM employees
-group by LAST_NAME /*WHERE LAST_NAME*/; -- 그룹은 WHERE이 불가
+group by LAST_NAME /*WHERE LAST_NAME*/; -- 그룹은 WHERE이 불가 > GROUP BY 사용
 
 select LAST_NAME, COUNT(*)
 FROM employees
