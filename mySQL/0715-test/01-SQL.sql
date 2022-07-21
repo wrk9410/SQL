@@ -1,5 +1,9 @@
-use my_db;
+USE my_db;
 
-SELECT * FROM my_db.books;
+SELECT * FROM my_db.restaurants;
 
-DESC books;
+SELECT * FROM restaurants WHERE name = '`; DROP TABLE restaurants; SELECT `';
+
+DESC restaurants;
+
+ALTER TABLE restaurants CHANGE adress address varchar(100);
